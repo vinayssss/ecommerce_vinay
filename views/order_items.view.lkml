@@ -90,7 +90,7 @@ view: order_items {
 
   dimension: user_id {
     type: number
-    # hidden: yes
+    # hidden: no
     sql: ${TABLE}.user_id ;;
   }
 
