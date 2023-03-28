@@ -101,6 +101,7 @@ view: order_items {
   measure:total_sale{
   type:sum
   sql:${TABLE}.sale_price;;
+  value_format_name: usd
   }
 
   # ----- Sets of fields for drilling ------
