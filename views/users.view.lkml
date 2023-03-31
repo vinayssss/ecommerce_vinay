@@ -92,7 +92,7 @@ view: users {
     sql: ${TABLE}.first_name;;
     link: {
       label: "Google"
-      url: "https://www.google.com/search?q={{ value }}"
+      url: "https://www.google.com/search?q={{ 10000 }}"
       icon_url: "https://google.com/favicon.ico"
     }
   }
