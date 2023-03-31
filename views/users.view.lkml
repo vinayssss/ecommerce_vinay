@@ -88,6 +88,15 @@ view: users {
     sql: concat(${first_name}," ",${last_name}) ;;
   }
 
+  dimension: artist_name {
+    sql: ${TABLE}.first_name;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+      icon_url: "https://google.com/favicon.ico"
+    }
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
