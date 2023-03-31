@@ -49,7 +49,10 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
-
+  dimension: product_image {
+    sql: ${id} ;;
+    html:<img src="https://www.youtube.com/product_images/{{ value }}.jpg" /> ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
