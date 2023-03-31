@@ -51,7 +51,7 @@ view: products {
   }
   dimension: product_image {
     sql: ${id} ;;
-    html:<img src="https://https://www.pexels.com/photo/woman-standing-behind-trees-2913125//product_images/{{ value }}.jpg" /> ;;
+    html:<img src="https://www.google.com/search?q={{ value }};;
   }
   measure: count {
     type: count
