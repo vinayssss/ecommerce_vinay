@@ -97,13 +97,13 @@ view: order_items {
 
   measure: count {
     type: count
-
-    drill_fields: [detail*]
+     drill_fields: [detail*]
   }
   measure: count_less_500{
-    type: count_distinct
-    filters: [order_id: "<500"]
-    sql: ${order_id} ;;
+    type: number
+    sql: ${count}<500 ;;
+
+
   }
   measure:total_sale{
   type:sum
