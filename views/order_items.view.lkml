@@ -99,12 +99,7 @@ view: order_items {
     type: count
      drill_fields: [detail*]
   }
-  measure: count_less_500{
-    type: number
-    sql: ${count}<500 ;;
 
-
-  }
   measure:total_sale{
   type:sum
   sql:${TABLE}.sale_price;;
