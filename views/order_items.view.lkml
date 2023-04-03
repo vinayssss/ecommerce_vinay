@@ -40,12 +40,13 @@ view: order_items {
 
   dimension: inventory_item_id {
     type: number
-    # hidden: yes
+    #hidden: yes
     sql: ${TABLE}.inventory_item_id ;;
   }
 
   dimension: order_id {
     type: number
+   # hidden: yes
     sql: ${TABLE}.order_id ;;
   }
 
@@ -96,8 +97,13 @@ view: order_items {
 
   measure: count {
     type: count
-    hidden: yes
+
     drill_fields: [detail*]
+  }
+  measure: count_less_500{
+    type: count_distinct
+    filters: [order_id: "<500"]
+    sql: ${order_id} ;;
   }
   measure:total_sale{
   type:sum
