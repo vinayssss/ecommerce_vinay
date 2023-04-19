@@ -120,10 +120,10 @@ view: order_items {
       <li> explore: {{ _explore._name }} </li>
       <li> field: {{ _field._name }} </li>
       <li> dialect: {{ _dialect._name }} </li>
-      <li> access filter: {{ _access_filters['company.name'] }} </li>
+      <li> access filter: {{ _access_filters['-null'] }} </li>
       <li> user attribute: {{ _user_attributes['region'] }} </li>
       <li> query timezone: {{ _query._query_timezone }} </li>
-      <li> filters: {{ _filters['order.total_order_amount'] }} </li>
+      <li> filters: {{ _filters['order_items.total_order_amount'] }} </li>
     </ul> ;;
   }
 
