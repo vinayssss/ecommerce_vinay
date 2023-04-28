@@ -3,7 +3,10 @@ connection: "looker_private_demo"
 # include all the views
 include: "/views/**/*.view"
 include: "/Userdashboard.dashboard.lookml"
-#include: "/dashboard/*.dashboard.lookml"
+include: "/Newdashboard.dashboard.lookml"
+
+include: "/dashboard/*.dashboard.lookml"
+
 datagroup: ecommerce_vinay_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
