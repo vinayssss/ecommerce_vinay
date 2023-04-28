@@ -47,8 +47,18 @@ view: users {
   dimension: first_name {
     type: string
     sql: ${TABLE}.first_name ;;
+    hidden: yes
   }
-
+  dimension: first_name_for_sort {
+    type: string
+    sql: CASE ${first_name}
+         WHEN 'B' THEN '1 B'
+         WHEN 'A' THEN '2 A'
+         WHEN 'C' THEN '3 C'
+       END ;;
+    label: "First_name"
+    html: {{ value | remove_first: "1 " | remove_first: "2 " | remove_first: "3 " }} ;;
+  }
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
