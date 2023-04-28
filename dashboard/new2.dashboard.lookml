@@ -1,5 +1,5 @@
-- name: add_a_unique_name_1682643188
-  title: Untitled Visualization
+- name: new2
+  title: new2
   model: ecommerce_vinay
   explore: order_items
   type: looker_grid
