@@ -95,6 +95,19 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    order_by_field: subject_orderings
+  }
+  dimension: subject_orderings {
+    type: number
+    sql:
+      CASE
+        WHEN ${state} = 'A' THEN 1
+        WHEN ${state} = 'B' THEN 2
+        WHEN ${state} = 'C' THEN 3
+        ELSE 4
+      END ;;
+    hidden: yes
+    description: "This dimension is used to force sort the subject dimension."
   }
 
   dimension: traffic_source {
