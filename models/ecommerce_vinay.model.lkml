@@ -2,8 +2,7 @@ connection: "looker_private_demo"
 
 # include all the views
 include: "/views/**/*.view"
-include: "/Userdashboard.dashboard.lookml"
-include: "/Newdashboard.dashboard.lookml"
+
 
 include: "/dashboard/*.dashboard.lookml"
 
