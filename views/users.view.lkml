@@ -56,7 +56,7 @@ view: users {
          WHEN 'A' THEN '2 A'
          WHEN 'C' THEN '3 C'
        END ;;
-    label: "First_name"
+    label: "First_namess"
     html: {{ value | remove_first: "1 " | remove_first: "2 " | remove_first: "3 " }} ;;
   }
   dimension: gender {
