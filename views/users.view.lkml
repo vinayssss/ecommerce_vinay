@@ -47,17 +47,30 @@ view: users {
   dimension: first_name {
     type: string
     sql: ${TABLE}.first_name ;;
-    hidden: yes
+    order_by_field: subject_ordering
   }
-  dimension: first_name_for_sort {
-    type: string
-    sql: CASE ${first_name}
-         WHEN 'B' THEN '1 B'
-         WHEN 'A' THEN '2 A'
-         WHEN 'C' THEN '3 C'
-       END ;;
-    label: "First_namess"
-    html: {{ value | remove_first: "1 " | remove_first: "2 " | remove_first: "3 " }} ;;
+
+  # dimension: first_name_for_sort {
+  #   type: string
+  #   sql: CASE ${first_name}
+  #       WHEN 'B' THEN '1 B'
+  #       WHEN 'A' THEN '2 A'
+  #       WHEN 'C' THEN '3 C'
+  #     END ;;
+  #   label: "First_namess"
+  #   html: {{ value | remove_first: "1 " | remove_first: "2 " | remove_first: "3 " }} ;;
+  #   }
+  dimension: subject_ordering {
+    type: number
+    sql:
+      CASE
+        WHEN ${first_name} = 'A' THEN 1
+        WHEN ${first_name} = 'B' THEN 2
+        WHEN ${first_name} = 'C' THEN 3
+        ELSE 4
+      END ;;
+    hidden: yes
+    description: "This dimension is used to force sort the subject dimension."
   }
   dimension: gender {
     type: string
